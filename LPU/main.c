@@ -9,18 +9,9 @@ int main()
     for(int i=0;i<n;i++)
     {
         printf("Enter the Process id: \t");
-        scanf()
+        scanf();
 
     }
 
-
-
-
-
-
-
-
-
-
-
+    return 0;
 }
