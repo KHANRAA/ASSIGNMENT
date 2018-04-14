@@ -61,17 +61,22 @@ int main()
     int at,bt;
     printf("Enter number of processes\n");
     scanf("%d",&n);
-    for (int i=0;i<n;i++)      //the complexity of the loop is n
-    {
-        printf("for process  %d\n",i+1);
 
-        printf("\nenter the process id\n ");
-        scanf("%d",&p[i].pid);
-        printf("\nenter the arrival time\n");
+
+    printf("\nEnter Arrival Time --------------> Burst Time:\n");
+    for(int i=0;i<n;i++)
+    {
+        printf("Arrival for ");
+        printf("P%d:",i+1);
         scanf("%d",&p[i].at);
-        printf("\nenter the burst time \n");
+        printf("Burst for");
+        printf("P%d:",i+1);
         scanf("%d",&p[i].bt);
+        p[i].pid=i;
+        p[i].pid=i+1;           //contains process number
     }
+
+
     int v=n-1;
     sort1(p,n);
     int a[n],b[n];
@@ -93,11 +98,11 @@ int main()
     if(0==p[0].at){
         printf("0");}
     else{
-        printf("0         %d",p[0].at);
+        printf("\n0         %d",p[0].at);
         t=t+p[0].at;
     }
     t=t+p[0].bt;
-    printf("    P%d      %d",p[0].pid,t);
+    printf("    P:%d      %d",p[0].pid,t);
     do{
 
         int e=0;
@@ -143,7 +148,7 @@ int main()
             for(int i=0;i<n;i++)
             {	if(t<p[i].at){
                     t=p[i].at+p[i].bt;
-                    printf("     %d     P%d       %d",p[i].at,p[i].pid,t);
+                    printf("     %d     P:%d       %d",p[i].at,p[i].pid,t);
                     break;
                     w=9;
                 }
@@ -151,7 +156,7 @@ int main()
         }
         else{
 
-            printf("    P%d      %d",f,t);
+            printf("    P:%d      %d",f,t);
             v--;}
         for(int i=0; i<m; i++)
         {
